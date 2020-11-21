@@ -154,10 +154,43 @@ cd ~/<git_root_folder>/devops/pipeline/stage-server
 2. Start the staging environment and jump into it.
 ```
 sudo vagrant up
+```
+
+
+Running this command should shown at the end of the output:
+
+```
+ default: Done.
+```
+
+**Troubleshooting**: if you see error messages like:
+```
+default: Extract into target directory
+default: 
+default: gzip: stdin: not in gzip format
+default: tar: Child returned status 1
+default: tar: Error is not recoverable: exiting now
+```
+then (the most probable) is that the version of Tomcat used is not available any more.
+This has to be solved by editing the file
+```
+setup-tomcat.sh
+```
+and changing in the line
+```
+curl -o apache-tomcat-9.0.40.tar.gz https://downloads.apache.org/tomcat/tomcat-9/v9.0.40/bin//apache-tomcat-9.0.40.tar.gz
+```
+the value v9.0.40 for the latest available Tomcat version.
+
+
+
+3. Enter into stage server using this command
+
+```
 sudo vagrant ssh
 ```
 
-3. Check Tomcat installation and configuration. 
+4. Check Tomcat installation and configuration. 
 Open a browser, and try to access to these URLs:
 ```
 http://192.168.33.17:8080
@@ -255,12 +288,49 @@ cd ~/<git_root_folder>/devops/pipeline/production-server
 ```
 
 2. Start the production environment and jump into it.
+
+
 ```
 sudo vagrant up
+```
+
+
+Running this command should shown at the end of the output:
+
+```
+ default: Done.
+```
+
+**Troubleshooting**: if you see error messages like:
+```
+default: Extract into target directory
+default: 
+default: gzip: stdin: not in gzip format
+default: tar: Child returned status 1
+default: tar: Error is not recoverable: exiting now
+```
+then (the most probable) is that the version of Tomcat used is not available any more.
+This has to be solved by editing the file
+```
+setup-tomcat.sh
+```
+and changing in the line
+```
+curl -o apache-tomcat-9.0.40.tar.gz https://downloads.apache.org/tomcat/tomcat-9/v9.0.40/bin//apache-tomcat-9.0.40.tar.gz
+```
+the value v9.0.40 for the latest available Tomcat version.
+
+
+
+3. Enter into stage server using this command
+
+```
 sudo vagrant ssh
 ```
 
-3. Check Tomcat installation and configuration. 
+
+
+4. Check Tomcat installation and configuration. 
 Open a browser, and try to access to these URLs:
 ```
 http://192.168.33.18:8080
