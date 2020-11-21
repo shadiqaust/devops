@@ -174,7 +174,7 @@ default: tar: Error is not recoverable: exiting now
 then (the most probable) is that the version of Tomcat used is not available any more.
 This has to be solved by editing the file
 ```
-setup-tomcat.sh
+~/<git_root_folder>/devops/pipeline/stage-server/scripts/setup-tomcat.sh
 ```
 and changing in the line
 ```
@@ -312,7 +312,7 @@ default: tar: Error is not recoverable: exiting now
 then (the most probable) is that the version of Tomcat used is not available any more.
 This has to be solved by editing the file
 ```
-setup-tomcat.sh
+~/<git_root_folder>/devops/pipeline/production-server/scripts/setup-tomcat.sh
 ```
 and changing in the line
 ```
