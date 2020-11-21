@@ -1,0 +1,11 @@
+---
+
+
+- name: Using curl to connect to a host via SOCKS proxy (unsupported in uri). Ordinarily this would throw a warning
+  shell: sudo curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh | sudo bash
+  args:
+    warn: no
+
+- name: 'install gitlab-runner'
+  shell: sudo apt-get install gitlab-runner
+

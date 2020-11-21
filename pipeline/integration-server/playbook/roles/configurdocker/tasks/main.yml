@@ -1,0 +1,13 @@
+---
+
+- name: 'Add a user to the docker group ot be able to access the docker CLI'
+  shell: sudo usermod -aG docker vagrant
+
+- name: 'Validate the installation and access by running a hello word container.'
+  shell: docker run --name hello-world hello-world
+ 
+- name: 'Remove the docker container and image:'
+  shell: docker rm hello-world
+ 
+- name: 'Remove the docker container and image:'
+  shell: docker rmi hello-world

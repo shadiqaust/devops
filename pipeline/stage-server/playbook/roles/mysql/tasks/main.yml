@@ -1,0 +1,5 @@
+---
+
+- name: 'Run database script'
+  shell: mysql -u root -p12345678 < /vagrant_scripts/create-user-table.sql
+
