@@ -1,17 +1,19 @@
-####Devops miniproject
+# Devops miniproject
 
 
 ## Assumptions/Pre-requisites
 
 ### Software
-1. Vagrant
-2. Ansible (v 2.7.5, or higher)
+1. Linux OS
+2. RAM minimum 16 GB
+3. Vagrant
+4. Ansible (v 2.7.5, or higher)
 * Instructions to install here: https://docs.ansible.com/
 * Check installation with the command `ansible --version`
 
 
-#### - Automate build process
 
+## - Automate build process
 
 
 
@@ -37,8 +39,6 @@ should be triggered.
 * These playbooks install GitLab, GitLab Runner and Docker . 
 
 * GitLab is used as VCS and CI, whereas Docker is used to handle the integration environments.
-
-
 
 
 3- Connect to GitLab
@@ -69,9 +69,6 @@ The goal of this step is to make use of GitLab as a VCS.
 
 1- Create SEEProduct project (in GitLab a project is a repository).<br>
 Follow the instructions to create the remote and local repositories.
-
-
-
 
 
 **Notes:** 
@@ -142,11 +139,11 @@ For the Docker image (eg. ruby:2.1) enter:<br>
 `sudo gitlab-runner restart`
 
 
-#### Congratualtion Automatic Build process is successfully done
+# Congratualtion Automatic Build process is successfully done
 
 
 
-#### Setup stage environment
+# Setup stage environment
 
 1. The Vagrantfile required to create and run the stage-server VM is provided in this repo. Go to the directory:
 
@@ -208,7 +205,6 @@ sudo gitlab-runner restart
 ```
 
 
-
 8. Grant sudo permissions to the gitlab-runner
 ```
 sudo usermod -a -G sudo gitlab-runner
@@ -239,18 +235,18 @@ modify add a new line to end of the modify.txt file
 
 commit and push file to repository
 
+Have a look on the CI/CD -> Pipelines of the project.
 
-# Check if the link after completing the pipelining job
+### Check if the link after completing the pipelining job
 ```
 http://192.168.33.17:8080/usermanagement/
 ```
 
-
-####Congratualtion your stage server is running
-
+## Congratualtion your stage server is running
 
 
-#### Setup production environment
+
+# Setup production environment
 
 1. The Vagrantfile required to create and run the production-server VM is provided in this repo. Go to the directory:
 
@@ -343,13 +339,14 @@ modify add a new line to end of the modify.txt file
 
 commit and push file to repository
 
+Have a look on the CI/CD -> Pipelines of the project.
 
-# Check if the link after completing the pipelining job
+### Check if the link after completing the pipelining job
 ```
 http://192.168.33.18:8080/usermanagement/
 ```
 
-#### Congratualtion production server is running
+## Congratualtion production server is running
 
 
    
